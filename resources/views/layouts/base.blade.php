@@ -9,17 +9,23 @@
     <title>@yield('title') - Academic Computing Society</title>
 
     <!-- CSS STYLING -->
-    <link rel="stylesheet" src="bower_components/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" src="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" src="{{ asset('css/style.css') }}"/>
   </head>
   <body>
     <div class="container">
+      <!-- HEADER SECTION -->
+      <div class="header">
+        <h3>Academic Computing Society</h3>
+      </div>
+
+      <!-- CONTENT SECTION -->
       @section('content')
       @endsection
     </div>
 
     <!-- BOOTSTRAP JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
