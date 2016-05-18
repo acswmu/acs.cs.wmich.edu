@@ -1,0 +1,21 @@
+{
+  "name": "acs.cs.wmich.edu",
+  "description": "The NEW new ACS site with everything necessary and nothing too ambitious yet.",
+  "main": "",
+  "authors": [
+    "Cade Gillem <cpgillem@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/acswmu/acs.cs.wmich.edu",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
