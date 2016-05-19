@@ -17,10 +17,23 @@
       <!-- HEADER SECTION -->
       <div class="header">
         <h3>Academic Computing Society</h3>
+        <nav>
+          <ul class="nav nav-tabs">
+            <li role="presentation"><a href="{{ url('/') }}">Home</a></li>
+            <li role="presentation"><a href="{{ url('/about') }}">About</a></li>
+            <li role="presentation"><a href="{{ url('/members') }}">Members</a></li>
+            <li role="presentation"><a href="{{ url('/projects') }}">Projects</a></li>
+            <li role="presentation"><a href="{{ url('/schedule') }}">Schedule</a></li>
+          </ul>
+        </nav>
       </div>
 
       <!-- CONTENT SECTION -->
-      @yield('content')
+      <div class="row">
+        <div class="col-sm-12" id="content">
+          @yield('content')
+        </div>
+      </div>
     </div>
 
     <!-- BOOTSTRAP JS -->
