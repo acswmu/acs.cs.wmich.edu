@@ -9,8 +9,8 @@
     <title>@yield('title') - Academic Computing Society</title>
 
     <!-- CSS STYLING -->
-    <link rel="stylesheet" src="{{ asset('css/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" src="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
   </head>
   <body>
     <div class="container">
