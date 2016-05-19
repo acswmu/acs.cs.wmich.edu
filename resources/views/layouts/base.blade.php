@@ -20,8 +20,7 @@
       </div>
 
       <!-- CONTENT SECTION -->
-      @section('content')
-      @endsection
+      @yield('content')
     </div>
 
     <!-- BOOTSTRAP JS -->
