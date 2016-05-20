@@ -29,11 +29,7 @@
       </div>
 
       <!-- CONTENT SECTION -->
-      <div class="row">
-        <div class="col-sm-12" id="content">
-          @yield('content')
-        </div>
-      </div>
+      @yield('content')
     </div>
 
     <!-- BOOTSTRAP JS -->
