@@ -36,6 +36,7 @@
   </div>
 
   <!-- Controls -->
+  <!--
   <a class="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -44,5 +45,6 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  -->
 </div>
 @endsection
