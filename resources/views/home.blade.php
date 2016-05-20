@@ -47,4 +47,20 @@
   </a>
   -->
 </div>
+
+<!-- ACS INFORMATION -->
+<div class="row">
+  <div class="text-center col-sm-12 col-md-6">
+    <h3>About Us<br/><small>Bottom Text</small></h3>
+    <p>Lorem Ipsum</p>
+    <p>Lorem Ipsum</p>
+    <p>Lorem Ipsum</p>
+  </div>
+  <div class="text-center col-sm-12 col-md-6">
+    <h3>Find Us<br/><small>Meetings Every Other Wednesday</small></h3>
+    <p>7 PM, Room B-115</p>
+    <p>College of Engineering and Applied Sciences</p>
+    <p>Western Michigan University</p>
+  </div>
+</div>
 @endsection

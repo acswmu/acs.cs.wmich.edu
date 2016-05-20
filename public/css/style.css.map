@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","file":"style.css","sourcesContent":[".carousel img {\n\tmax-height: 300px;\n}\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","file":"style.css","sourcesContent":[".carousel img {\n\twidth: 100%;\n}\n"],"sourceRoot":"/source/"}
