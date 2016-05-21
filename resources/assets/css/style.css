@@ -1,3 +1,17 @@
 .carousel img {
 	width: 100%;
 }
+
+.nav-tabs > li > a {
+	border-color: red red transparent red;
+	color: red;
+}
+
+.nav-tabs > li > a:hover {
+	border-color: red red transparent red;
+	background-color: #F3D7D7;
+}
+
+.nav-tabs > li {
+	margin-right: 10px;
+}
