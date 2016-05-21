@@ -16,6 +16,7 @@
     <div class="container">
       <!-- HEADER SECTION -->
       <div class="header">
+        <img src="{{ asset('images/acslogo-compact.png') }}" alt="Compact ACS Logo" width="76px" class="img-responsive pull-left"/>
         <h3>Academic Computing Society</h3>
         <nav>
           <ul class="nav nav-tabs">
