@@ -24,4 +24,5 @@ elixir(function(mix) {
 
 	/* Images */
 	mix.copy('resources/assets/images/', 'public/images');
+	mix.copy('resources/assets/images/acslogo-compact.ico', 'public/favicon.ico');
 });
