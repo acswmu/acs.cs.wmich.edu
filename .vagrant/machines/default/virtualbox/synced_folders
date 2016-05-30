@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/acs-cs-wmich-edu":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/acs-cs-wmich-edu","hostpath":"/home/cpg/web/acs.cs.wmich.edu","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/cpg/web/acs.cs.wmich.edu","disabled":false}}}
