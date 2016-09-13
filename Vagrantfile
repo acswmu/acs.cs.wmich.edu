@@ -1,3 +1,5 @@
+# vim: ft=ruby
+
 require 'json'
 require 'yaml'
 
