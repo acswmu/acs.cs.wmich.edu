@@ -27,6 +27,10 @@ Route::get('/projects', function () {
   return view('projects');
 });
 
+Route::get('/meetings', function () {
+  return view('meetings');
+});
+
 Route::get('/schedule', function () {
   return view('schedule');
 });
