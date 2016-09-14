@@ -34,3 +34,7 @@ Route::get('/meetings', function () {
 Route::get('/schedule', function () {
   return view('schedule');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
