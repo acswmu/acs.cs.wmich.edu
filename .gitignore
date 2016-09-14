@@ -7,3 +7,5 @@ Homestead.json
 
 **/*.swp
 bower_components/
+
+.vagrant
