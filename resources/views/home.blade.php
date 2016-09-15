@@ -17,21 +17,12 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img class="center-block" src="{{ asset('images/1.jpg') }}" alt="Image of ACS">
-      <div class="carousel-caption">
-        ACS exists
-      </div>
     </div>
     <div class="item">
       <img class="center-block" src="{{ asset('images/2.jpg') }}" alt="Image of ACS">
-      <div class="carousel-caption">
-        Academic Society Computing!
-      </div>
     </div>
     <div class="item">
       <img class="center-block" src="{{ asset('images/3.jpg') }}" alt="Image of ACS">
-      <div class="carousel-caption">
-        An ACS Thing
-      </div>
     </div>
   </div>
 
@@ -50,17 +41,23 @@
 
 <!-- ACS INFORMATION -->
 <div class="row">
-  <div class="text-center col-sm-12 col-md-6">
-    <h3>Contact Us<br/><small>Bottom Text</small></h3>
-    <p>Lorem Ipsum</p>
-    <p>Lorem Ipsum</p>
-    <p>Lorem Ipsum</p>
+  <div class="text-center col-sm-12">
+    <h3>Who We Are</h3>
+    <p class="lead"><em>The Academic Computing Society is a student organization dedicated to the promotion of academic growth, the encouragement of networking, and the exploration of new ideas in the field of computer science.</em></p>
   </div>
   <div class="text-center col-sm-12 col-md-6">
-    <h3>Find Us<br/><small>Meetings Every Other Wednesday at 7 PM</small></h3>
-    <p>Room B-115</p>
-    <p>College of Engineering and Applied Sciences</p>
-    <p>Western Michigan University</p>
+    <h3>Contact Us<br/><small>Join us on Slack or Facebook</small></h3>
+    <p><a href="https://wmu-acs.slack.com"><img src="{{ asset('images/Slack App Icon.png') }}" alt="Slack App Icon" height="24px"/> wmu-acs</a></p>
+    <p><a href="https://www.facebook.com/AcademicComputingSociety/"><img src="{{ asset('images/FB-f-Logo__blue_50.png') }}" height="24px"/> /AcademicComputingSociety</a></p>
+  </div>
+  <div class="text-center col-sm-12 col-md-6">
+    <h3>Find Us<br/>
+      <small>Meetings Every Wednesday at 5 PM</small>
+    </h3>
+    <p>Room B-115<br/>
+    College of Engineering and Applied Sciences<br/>
+    Western Michigan University
+    </p>
   </div>
 </div>
 @endsection
