@@ -23,7 +23,7 @@
         <nav>
           <ul class="nav nav-tabs">
             <li role="presentation"><a href="{{ url('/') }}">Home</a></li>
-            <li role="presentation"><a href="{{ url('/about') }}">About</a></li>
+            <!--<li role="presentation"><a href="{{ url('/about') }}">About</a></li>-->
             <li role="presentation"><a href="{{ url('/members') }}">Members</a></li>
             <li role="presentation"><a href="{{ url('/projects') }}">Projects</a></li>
             <li role="presentation"><a href="{{ url('/meetings') }}">Meetings</a></li>
