@@ -12,12 +12,6 @@ class RoutesTest extends TestCase
         ->see('<title>Home');
     }
 
-    public function testGetAbout()
-    {
-      $this->visit('/about')
-        ->see('<title>About Us');
-    }
-
     public function testGetMembers()
     {
       $this->visit('/members')
