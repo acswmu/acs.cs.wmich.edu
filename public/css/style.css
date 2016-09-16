@@ -3,13 +3,11 @@
 }
 
 .nav-tabs > li > a {
-	border-color: red red transparent red;
-	color: red;
+	color: black;
 }
 
 .nav-tabs > li > a:hover {
-	border-color: red red transparent red;
-	background-color: #F3D7D7;
+	color: red;
 }
 
 .nav-tabs > li {

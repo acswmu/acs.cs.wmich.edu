@@ -4,13 +4,6 @@
 
 @section('content')
 
-<div class="row col-sm-12">
-  <!-- INTRO -->
-  <h3>Members</h3>
-  <p>A couple paragraphs heaping praise upon our cool members and their accomplishments.</p>
-  <p>A couple paragraphs heaping praise upon our cool members and their accomplishments.</p>
-</div>
-
 <div class="row">
 
   <!-- LEFT COLUMN: OFFICERS -->
