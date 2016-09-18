@@ -16,4 +16,22 @@ class ManageTest extends TestCase
         ->visit('/manage')
         ->see('<title>Manage');
     }
+
+    public function testAdmin()
+    {
+      $user = factory(App\User::class, 'admin')->create();
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->see('id="column-administration"');
+    }
+
+    public function testNonAdmin()
+    {
+      $user = factory(App\User::class)->create();
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->dontSee('id="column-administration"');
+    }
 }
