@@ -44,4 +44,5 @@ Route::group([
   'prefix' => 'manage',
 ], function() {
   Route::get('/', 'ManageController@index');
+  Route::post('/add_agenda_topic', 'ManageController@postAgendaTopic');
 });
