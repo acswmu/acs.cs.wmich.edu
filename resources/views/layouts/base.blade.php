@@ -28,6 +28,12 @@
             <li role="presentation"><a href="{{ url('/projects') }}">Projects</a></li>
             <li role="presentation"><a href="{{ url('/meetings') }}">Meetings</a></li>
             <li role="presentation"><a href="{{ url('/schedule') }}">Schedule</a></li>
+            @if (Auth::guest())
+              <li role="presentation"><a href="{{ url('/login') }}">Login</a></li>
+              <li role="presentation"><a href="{{ url('/register') }}">Register</a></li>
+            @else
+              <li role="presentation"><a href="{{ url('/logout') }}">Logout</a></li>
+            @endif
           </ul>
         </nav>
       </div>

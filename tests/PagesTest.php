@@ -4,7 +4,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class RoutesTest extends TestCase
+class PagesTest extends TestCase
 {
     public function testGetHome()
     {
@@ -34,5 +34,17 @@ class RoutesTest extends TestCase
     {
       $this->visit('/schedule')
         ->see('<title>Schedule');
+    }
+
+    public function testGetLogin()
+    {
+      $this->visit('/login')
+        ->see('<title>Login');
+    }
+
+    public function testGetRegister()
+    {
+      $this->visit('/register')
+        ->see('<title>Register');
     }
 }

@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('title', 'Home')
+
 @section('content')
 <!-- FROM BOOTSTRAP DOCUMENTATION: http://getbootstrap.com/javascript/#carousel --> 
 <div id="home-carousel" class="carousel slide" data-ride="carousel">
