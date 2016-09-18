@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
 <!-- FROM BOOTSTRAP DOCUMENTATION: http://getbootstrap.com/javascript/#carousel --> 
