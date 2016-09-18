@@ -24,7 +24,7 @@
       </div>
 
       <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label class="col-md-4 control-label">E-Mail Address</label>
+        <label class="col-md-4 control-label">WMU Email Address</label>
 
         <div class="col-md-6">
           <input type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -60,6 +60,34 @@
           @if ($errors->has('password_confirmation'))
             <span class="help-block">
               <strong>{{ $errors->first('password_confirmation') }}</strong>
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+        <label class="col-md-4 control-label">Personal Website URL</label>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="website">
+
+          @if ($errors->has('website'))
+            <span class="help-block">
+              <strong>{{ $errors->first('website') }}</strong>
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
+        <label class="col-md-4 control-label">Bio</label>
+
+        <div class="col-md-6">
+          <textarea name="bio" class="form-control" rows="4"></textarea>
+
+          @if ($errors->has('website'))
+            <span class="help-block">
+              <strong>{{ $errors->first('website') }}</strong>
             </span>
           @endif
         </div>
