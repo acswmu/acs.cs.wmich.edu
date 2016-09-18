@@ -17,8 +17,6 @@
       </h3>
     </div>
 
-    {{ Auth::user()->admin }}
-
     @if (Auth::user()->admin)
 
     <div class="col-lg-4" id="column-administration">
