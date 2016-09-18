@@ -38,3 +38,10 @@ Route::get('/schedule', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group([
+  'middleware' => 'auth',
+  'prefix' => 'manage',
+], function() {
+  Route::get('/', 'ManageController@index');
+});

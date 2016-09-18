@@ -33,6 +33,7 @@
               <li role="presentation"><a href="{{ url('/register') }}">Register</a></li>
             @else
               <li role="presentation"><a href="{{ url('/logout') }}">Logout</a></li>
+              <li role="presentation"><a href="{{ url('/manage') }}">Manage</a></li>
             @endif
           </ul>
         </nav>
