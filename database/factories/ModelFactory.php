@@ -28,6 +28,7 @@ $factory->defineAs(App\User::class, 'admin', function(Faker\Generator $faker) {
     'email' => $faker->safeEmail,
     'bio' => $faker->paragraph,
     'website' => $faker->url,
+    'admin' => true,
     'password' => bcrypt('password'),
     'remember_token' => str_random(10),
   ];
@@ -39,6 +40,7 @@ $factory->defineAs(App\User::class, 'base_admin', function(Faker\Generator $fake
     'email' => 'test@wmich.edu',
     'bio' => $faker->paragraph,
     'website' => $faker->url,
+    'admin' => true,
     'password' => bcrypt('password'),
     'remember_token' => str_random(10),
   ];
