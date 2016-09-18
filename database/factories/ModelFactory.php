@@ -32,3 +32,18 @@ $factory->defineAs(App\User::class, 'admin', function(Faker\Generator $faker) {
     'remember_token' => str_random(10),
   ];
 });
+
+$factory->define(App\AgendaTopic::class, function(Faker\Generator $faker) {
+  return [
+    'topic' => $faker->sentence,
+    'description' => $faker->paragraph,
+  ];
+});
+
+$factory->defineAs(App\AgendaTopic::class, 'important', function(Faker\Generator $faker) {
+  return [
+    'topic' => $faker->sentence,
+    'description' => $faker->paragraph,
+    'important' => true,
+  ];
+});
