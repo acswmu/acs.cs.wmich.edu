@@ -1,5 +1,7 @@
 <?php
 
+use App\AgendaTopic;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -28,7 +30,19 @@ Route::get('/projects', function () {
 });
 
 Route::get('/meetings', function () {
-  return view('meetings');
+  $agendaTopicsNew = AgendaTopic::where('resolved', false)
+    ->where('old_business', false)
+    ->orderBy('important', 'desc')
+    ->get();
+
+  $agendaTopicsOld = AgendaTopic::where('resolved', false)
+    ->where('old_business', true)
+    ->orderBy('important', 'desc')
+    ->get();
+
+  return view('meetings')
+    ->with('agendaTopicsNew', $agendaTopicsNew)
+    ->with('agendaTopicsOld', $agendaTopicsOld);
 });
 
 Route::get('/schedule', function () {
@@ -44,5 +58,9 @@ Route::group([
   'prefix' => 'manage',
 ], function() {
   Route::get('/', 'ManageController@index');
-  Route::post('/add_agenda_topic', 'ManageController@postAgendaTopic');
+  Route::resource('/agenda_topic', 'AgendaTopicController', [
+    'only' => [
+      'store', 'update', 'destroy',
+    ],
+  ]);
 });

@@ -11,7 +11,44 @@
     </h3>
     <!-- In the future this will pull from somewhere that is easier to edit. -->
     <!-- For now, edit it on the page directly. -->
-    <p>Coming Soon</p>
+
+    <h4>Old Business</h4>
+
+    <ol>
+    
+    @foreach($agendaTopicsOld as $agendaTopic)
+
+      <li>
+        @if ($agendaTopic->important)
+        <span class="label label-danger">Important</span>
+        @endif
+
+        <strong>{{ $agendaTopic->topic }}</strong><br/>
+        {{ $agendaTopic->description }}
+      </li>
+
+    @endforeach
+
+    </ol>
+
+    <h4>New Business</h4>
+
+    <ol>
+
+    @foreach ($agendaTopicsNew as $agendaTopic)
+      
+      <li>
+        @if ($agendaTopic->important)
+        <span class="label label-danger">Important</span>
+        @endif
+
+        <strong>{{ $agendaTopic->topic }}</strong><br/>
+        {{ $agendaTopic->description }}
+      </li>
+
+    @endforeach
+
+    </ol>
   </div>
 
   <div class="col-sm-12 col-md-4">

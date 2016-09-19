@@ -34,22 +34,4 @@ class ManageTest extends TestCase
         ->visit('/manage')
         ->dontSee('id="column-administration"');
     }
-
-    /* This test asserts that the agenda topic adding form did not cause an
-     * error, and that it added and can display the new topic. */
-    public function testAddAgendaTopic()
-    {
-      $user = factory(App\User::class, 'admin')->create();
-      $topic = 'Test Topic';
-      $description = 'Test Description';
-
-      $this->actingAs($user)
-        ->visit('/manage')
-        ->type($topic, 'topic')
-        ->type($description, 'description')
-        ->check('important')
-        ->press('add_agenda_topic')
-        ->seePageIs('/manage')
-        ->see($topic);
-    }
 }

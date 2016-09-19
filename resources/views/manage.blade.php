@@ -22,7 +22,7 @@
           Add Topic
         </div>
         <div class="panel-body">
-          <form role="form" action="{{ url('/manage/add_agenda_topic') }}" method="POST">
+          <form role="form" action="{{ url('/manage/agenda_topic') }}" method="POST">
             {!! csrf_field() !!}
 
             <div class="form-group">
@@ -74,7 +74,25 @@
           @foreach ($agendaTopics as $agendaTopic)
 
             <li class="list-group-item">
-              {{ $agendaTopic->topic }}
+              <p>
+
+              @if ($agendaTopic->old_business)
+
+              <span class="label label-warning">Old Business</span>
+
+              @else
+
+              <span class="label label-success">New Business</span>
+
+              @endif
+
+              @if ($agendaTopic->important)
+
+              <span class="label label-danger">Important</span>
+
+              @endif
+
+              {{ $agendaTopic->topic }}</p>
             </li>
 
           @endforeach

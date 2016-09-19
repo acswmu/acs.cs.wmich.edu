@@ -13,5 +13,6 @@ class AgendaTopic extends Model
     'resolved', 
     'important', 
     'resolved_on',
+    'user_id'
   ];
 }
