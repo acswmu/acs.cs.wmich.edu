@@ -28,6 +28,7 @@
 
         <div class="col-md-6">
           <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+          <span class="help-block">Please use your WMU email address. This will be used for sending meeting agendas and important reminders. We promise not to spam.</span>
 
           @if ($errors->has('email'))
             <span class="help-block">
@@ -42,6 +43,7 @@
 
         <div class="col-md-6">
           <input type="password" class="form-control" name="password">
+          <span class="help-block">Think of something unique. Reusing passwords is discouraged.</span>
 
           @if ($errors->has('password'))
             <span class="help-block">
@@ -104,7 +106,13 @@
   </div>
   <div class="col-md-4">
     <h3><small>What an account gets you...</small></h3>
-    <p>Description of registration</p>
+    <ul>
+      <li>Currently, you will be able to suggest meeting agenda items.</li>
+      <li><span class="label label-success">Coming Soon</span> A micro-blog on our site</li>
+      <li><span class="label label-success">Coming Soon</span> Easier website administration for officers</li>
+
+      <p><em>Thanks for joining!</em></p>
+    </ul>
   </div>
 </div>
 @endsection
