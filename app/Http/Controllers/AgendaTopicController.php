@@ -56,12 +56,11 @@ class AgendaTopicController extends Controller
 
         $agendaTopic->topic = $request->input('topic', $agendaTopic->topic);
         $agendaTopic->description = $request->input('description', $agendaTopic->description);
-        if ($request->has('old_business')) {
-          $agendaTopic->old_business = $request->input('old_business', false) == 'on';
+        if ($request->user()->admin) {
+          $agendaTopic->important = $request->input('important', false) == 'on';
         }
-        if ($request->has('resolved')) {
-          $agendaTopic->resolved = $request->input('resolved', false) == 'on';
-        }
+        $agendaTopic->old_business = $request->input('old_business', false) == 'on';
+        $agendaTopic->resolved = $request->input('resolved', false) == 'on';
 
         $agendaTopic->save();
       }

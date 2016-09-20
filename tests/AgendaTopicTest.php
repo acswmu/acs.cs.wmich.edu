@@ -55,28 +55,6 @@ class AgendaTopicTest extends TestCase
         ->dontSee($agendaTopic->topic);
     }
 
-    /*
-    public function testUpdateAgendaTopic()
-    {
-      $user = factory(App\User::class)->create();
-      $agendaTopic = factory(App\AgendaTopic::class)->create();
-      $agendaTopic->user_id = $user->id;
-      $agendaTopic->save();
-
-      $this->actingAs($user)
-        ->visit('/manage')
-        ->check('agenda_topic_old_business_' . $agendaTopic->id)
-        ->press('agenda_topic_update_' . $agendaTopic->id)
-        ->see('Old Business');
-
-      $this->actingAs($user)
-        ->visit('/manage')
-        ->check('agenda_topic_resolved_' . $agendaTopic->id)
-        ->press('agenda_topic_update_' . $agendaTopic->id)
-        ->see('Resolved');
-    }
-    */
-
     public function testEditAgendaTopic()
     {
       $user = factory(App\User::class)->create();

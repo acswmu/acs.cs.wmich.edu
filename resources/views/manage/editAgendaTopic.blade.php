@@ -21,6 +21,15 @@
           <textarea name="description" class="form-control" id="description" rows="3">{{ $agendaTopic->description }}</textarea>
         </div>
 
+        @if (Auth::user()->admin)
+        <div class="checkbox">
+          <label>
+          <input type="checkbox" name="important" id="important" {{ $agendaTopic->important ? 'checked="checked"' : '' }}/>
+            Important
+          </label>
+        </div>
+        @endif
+
         <div class="checkbox">
           <label>
           <input type="checkbox" name="old_business" id="old_business" {{ $agendaTopic->old_business ? 'checked="checked"' : '' }}/>
