@@ -25,7 +25,7 @@ class CreateAgendaTopicsTable extends Migration
         $table->boolean('important')->default(false);
 
         /* Dates and times */
-        $table->date('resolved_on')->nullable();
+        $table->dateTime('resolved_on')->nullable();
         $table->timestamps();
       });
     }
