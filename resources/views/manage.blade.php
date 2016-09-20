@@ -76,23 +76,27 @@
             <tr>
               <td>
 
-                @if ($agendaTopic->old_business)
-
+                @if ($agendaTopic->resolved)
+                <span class="label label-default">Resolved</span>
+                @elseif ($agendaTopic->old_business)
                 <span class="label label-warning">Old Business</span>
-
                 @else
-
                 <span class="label label-success">New Business</span>
-
                 @endif
 
-                @if ($agendaTopic->important)
-
+                @if ($agendaTopic->important && ! $agendaTopic->resolved)
                 <span class="label label-danger">Important</span>
+                @endif
 
+                @if ($agendaTopic->resolved)
+                <del>
                 @endif
 
                 {{ $agendaTopic->topic }}
+
+                @if ($agendaTopic->resolved)
+                </del>
+                @endif
               </td>
 
               <td>
@@ -105,35 +109,7 @@
               </td>
 
               <td>
-              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="show_agenda_topic_update_{{ $agendaTopic->id }}">
-									Update
-								</a>
-								<div class="collapse" id="collapseExample">
-									<div class="well">
-										<form action="{{ url('manage/agenda_topic/' . $agendaTopic->id) }}" method="POST">
-											{{ csrf_field() }}
-                      {{ method_field('PATCH') }}
-
-                      <div class="form-group">
-                        <label>
-                          <input type="checkbox" name="old_business" id="agenda_topic_old_business_{{ $agendaTopic->id }}" {{ $agendaTopic->old_business ? 'checked="checked"' : '' }}/>
-                          Old Business?
-                        </label>
-                      </div>
-
-                      <div class="form-group">
-                        <label>
-                          <input type="checkbox" name="resolved" id="agenda_topic_resolved_{{ $agendaTopic->id }}" {{ $agendaTopic->resolved ? 'checked="checked"' : '' }}/>
-                          Resolved?
-                        </label>
-                      </div>
-
-                      <div class="form-group">
-                        <button type="submit" id="agenda_topic_update_{{ $agendaTopic->id }}" class="btn">Save</button>
-                      </div>
-										</form>
-									</div>
-								</div>
+              <a role="button" href="{{ url('manage/agenda_topic/' . $agendaTopic->id . '/edit') }}" class="btn btn-info" id="edit_agenda_topic_{{ $agendaTopic->id }}">Edit</a>
               </td>
             </tr>
 

@@ -60,7 +60,7 @@ Route::group([
   Route::get('/', 'ManageController@index');
   Route::resource('/agenda_topic', 'AgendaTopicController', [
     'only' => [
-      'store', 'update', 'destroy',
+      'store', 'update', 'destroy', 'edit'
     ],
   ]);
 });

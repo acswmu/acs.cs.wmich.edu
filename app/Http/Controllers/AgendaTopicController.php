@@ -43,24 +43,28 @@ class AgendaTopicController extends Controller
     public function update(Request $request, $id)
     {
       /* Update an agenda topic, but only if the user either owns the topic or
-       * is admin. 
-      $this->validate($request, [
-        'old_business' => 'boolean',
-        'resolved' => 'boolean',
-      ]); */
+       * is admin. */
 
-      $agendaTopic = AgendaTopic::find($id);
+      $agendaTopic = AgendaTopic::findOrFail($id);
 
-      /* If the topic is just now being resolved, set the time it was 
-       * resolved. */
-      if (! $agendaTopic->resolved && $request->input('resolved', false) == 'on') {
-        $agendaTopic->resolved_at = Carbon::now();
+      if ($request->user()->admin || $agendaTopic->user_id == $request->user()->id) {
+        /* If the topic is just now being resolved, set the time it was 
+         * resolved. */
+        if (! $agendaTopic->resolved && $request->input('resolved', false) == 'on') {
+          $agendaTopic->resolved_at = Carbon::now();
+        }
+
+        $agendaTopic->topic = $request->input('topic', $agendaTopic->topic);
+        $agendaTopic->description = $request->input('description', $agendaTopic->description);
+        if ($request->has('old_business')) {
+          $agendaTopic->old_business = $request->input('old_business', false) == 'on';
+        }
+        if ($request->has('resolved')) {
+          $agendaTopic->resolved = $request->input('resolved', false) == 'on';
+        }
+
+        $agendaTopic->save();
       }
-
-      $agendaTopic->old_business = $request->input('old_business', false) == 'on';
-      $agendaTopic->resolved = $request->input('resolved', false) == 'on';
-
-      $agendaTopic->save();
 
       return redirect('/manage');
     }
@@ -82,5 +86,11 @@ class AgendaTopicController extends Controller
       }
 
       return redirect('/manage');
+    }
+
+    public function edit($id, Request $request)
+    {
+      $agendaTopic = AgendaTopic::findOrFail($id);
+      return view('manage.editAgendaTopic')->with('agendaTopic', $agendaTopic);
     }
 }

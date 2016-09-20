@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithoutMiddleware; use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AgendaTopicTest extends TestCase
@@ -40,5 +39,69 @@ class AgendaTopicTest extends TestCase
         ->visit('/manage')
         ->see($agendaTopicOwned->topic)
         ->dontSee($agendaTopic->topic);
+    }
+
+    public function testDeleteAgendaTopic() 
+    {
+      $user = factory(App\User::class)->create();
+      $agendaTopic = factory(App\AgendaTopic::class)->create();
+      $agendaTopic->user_id = $user->id;
+      $agendaTopic->save();
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->press('delete_agenda_topic_' . $agendaTopic->id)
+        ->seePageIs('/manage')
+        ->dontSee($agendaTopic->topic);
+    }
+
+    /*
+    public function testUpdateAgendaTopic()
+    {
+      $user = factory(App\User::class)->create();
+      $agendaTopic = factory(App\AgendaTopic::class)->create();
+      $agendaTopic->user_id = $user->id;
+      $agendaTopic->save();
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->check('agenda_topic_old_business_' . $agendaTopic->id)
+        ->press('agenda_topic_update_' . $agendaTopic->id)
+        ->see('Old Business');
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->check('agenda_topic_resolved_' . $agendaTopic->id)
+        ->press('agenda_topic_update_' . $agendaTopic->id)
+        ->see('Resolved');
+    }
+    */
+
+    public function testEditAgendaTopic()
+    {
+      $user = factory(App\User::class)->create();
+      $agendaTopic = factory(App\AgendaTopic::class)->create();
+      $agendaTopic->user_id = $user->id;
+      $agendaTopic->save();
+
+      $this->actingAs($user)
+        ->visit('/manage')
+        ->click('edit_agenda_topic_' . $agendaTopic->id)
+        ->seePageIs('/manage/agenda_topic/' . $agendaTopic->id . '/edit');
+    }
+
+    public function testUpdateAgendaTopic()
+    {
+      $user = factory(App\User::class)->create();
+      $agendaTopic = factory(App\AgendaTopic::class)->create();
+      $agendaTopic->user_id = $user->id;
+      $agendaTopic->save();
+
+      $this->actingAs($user)
+        ->visit('/manage/agenda_topic/' . $agendaTopic->id . '/edit')
+        ->check('old_business')
+        ->press('Update')
+        ->seePageIs('/manage')
+        ->see('Old Business');
     }
 }

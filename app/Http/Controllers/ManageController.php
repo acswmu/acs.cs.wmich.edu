@@ -12,8 +12,11 @@ class ManageController extends Controller
 {
   public function index(Request $request)
   {
-    $agendaTopics = AgendaTopic::where('resolved', false)
-      ->where('user_id', $request->user()->id)->get();
+    $agendaTopicsQuery = AgendaTopic::query();
+    if (! $request->user()->admin) {
+      $agendaTopicsQuery = $agendaTopicsQuery->where('user_id', $request->user()->id);
+    }
+    $agendaTopics = $agendaTopicsQuery->get();
 
     return view('manage')
       ->with('agendaTopics', $agendaTopics);
