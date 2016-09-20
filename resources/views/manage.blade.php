@@ -94,6 +94,47 @@
 
                 {{ $agendaTopic->topic }}
               </td>
+
+              <td>
+                <form action="{{ url('manage/agenda_topic/' . $agendaTopic->id) }}" method="POST">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+
+                  <button type="submit" id="delete_agenda_topic_{{ $agendaTopic->id }}" class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+
+              <td>
+              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="show_agenda_topic_update_{{ $agendaTopic->id }}">
+									Update
+								</a>
+								<div class="collapse" id="collapseExample">
+									<div class="well">
+										<form action="{{ url('manage/agenda_topic/' . $agendaTopic->id) }}" method="POST">
+											{{ csrf_field() }}
+                      {{ method_field('PATCH') }}
+
+                      <div class="form-group">
+                        <label>
+                          <input type="checkbox" name="old_business" id="agenda_topic_old_business_{{ $agendaTopic->id }}" {{ $agendaTopic->old_business ? 'checked="checked"' : '' }}/>
+                          Old Business?
+                        </label>
+                      </div>
+
+                      <div class="form-group">
+                        <label>
+                          <input type="checkbox" name="resolved" id="agenda_topic_resolved_{{ $agendaTopic->id }}" {{ $agendaTopic->resolved ? 'checked="checked"' : '' }}/>
+                          Resolved?
+                        </label>
+                      </div>
+
+                      <div class="form-group">
+                        <button type="submit" id="agenda_topic_update_{{ $agendaTopic->id }}" class="btn">Save</button>
+                      </div>
+										</form>
+									</div>
+								</div>
+              </td>
             </tr>
 
           @endforeach

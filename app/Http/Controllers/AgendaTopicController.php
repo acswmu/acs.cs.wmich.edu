@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\AgendaTopic;
 
+use Carbon\Carbon;
+
 class AgendaTopicController extends Controller
 {
     /**
@@ -41,8 +43,26 @@ class AgendaTopicController extends Controller
     public function update(Request $request, $id)
     {
       /* Update an agenda topic, but only if the user either owns the topic or
-       * is admin. */
-      return '';
+       * is admin. 
+      $this->validate($request, [
+        'old_business' => 'boolean',
+        'resolved' => 'boolean',
+      ]); */
+
+      $agendaTopic = AgendaTopic::find($id);
+
+      /* If the topic is just now being resolved, set the time it was 
+       * resolved. */
+      if (! $agendaTopic->resolved && $request->input('resolved', false) == 'on') {
+        $agendaTopic->resolved_at = Carbon::now();
+      }
+
+      $agendaTopic->old_business = $request->input('old_business', false) == 'on';
+      $agendaTopic->resolved = $request->input('resolved', false) == 'on';
+
+      $agendaTopic->save();
+
+      return redirect('/manage');
     }
 
     /**
