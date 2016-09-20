@@ -15,4 +15,14 @@ class AgendaTopic extends Model
     'resolved_on',
     'user_id'
   ];
+
+  protected $dates = [
+    'created_at',
+    'updated_at',
+    'resolved_on'
+  ];
+
+  public function user() {
+    return $this->belongsTo('App\User');
+  }
 }
