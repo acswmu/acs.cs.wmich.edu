@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PagesTest extends TestCase
 {
+    use DatabaseMigrations;
+
     public function testGetHome()
     {
       $this->visit('/')

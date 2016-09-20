@@ -67,37 +67,38 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          Current Topics
+          Your Topics
         </div>
-        <ul class="list-group">
+        <table class="table">
 
           @foreach ($agendaTopics as $agendaTopic)
 
-            <li class="list-group-item">
-              <p>
+            <tr>
+              <td>
 
-              @if ($agendaTopic->old_business)
+                @if ($agendaTopic->old_business)
 
-              <span class="label label-warning">Old Business</span>
+                <span class="label label-warning">Old Business</span>
 
-              @else
+                @else
 
-              <span class="label label-success">New Business</span>
+                <span class="label label-success">New Business</span>
 
-              @endif
+                @endif
 
-              @if ($agendaTopic->important)
+                @if ($agendaTopic->important)
 
-              <span class="label label-danger">Important</span>
+                <span class="label label-danger">Important</span>
 
-              @endif
+                @endif
 
-              {{ $agendaTopic->topic }}</p>
-            </li>
+                {{ $agendaTopic->topic }}
+              </td>
+            </tr>
 
           @endforeach
 
-        </ul>
+        </table>
       </div><!-- END PANEL -->
 
     </div><!-- END COLUMN-MEETINGS -->

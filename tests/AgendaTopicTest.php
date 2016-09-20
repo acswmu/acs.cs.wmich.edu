@@ -41,20 +41,4 @@ class AgendaTopicTest extends TestCase
         ->see($agendaTopicOwned->topic)
         ->dontSee($agendaTopic->topic);
     }
-
-    /* This test asserts that the user can delete an agenda topic belonging
-     * to them. */
-    public function testDeleteAgendaTopic()
-    {
-      $user = factory(App\User::class)->create();
-      $agendaTopic = factory(App\AgendaTopic::class)->create();
-      $agendaTopic->user_id = $user->id;
-      $agendaTopic->save();
-
-      $this->actingAs($user)
-        ->visit('/manage')
-        ->press('delete_agenda_topic_' . $agendaTopic->id)
-        ->seePageIs('/manage')
-        ->dontSee($agendaTopic->topic);
-    }
 }
