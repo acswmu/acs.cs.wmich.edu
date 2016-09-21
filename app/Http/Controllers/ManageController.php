@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\AgendaTopic;
+use App\User;
 
 class ManageController extends Controller
 {
@@ -18,7 +19,10 @@ class ManageController extends Controller
     }
     $agendaTopics = $agendaTopicsQuery->get();
 
+    $users = User::all();
+
     return view('manage')
-      ->with('agendaTopics', $agendaTopics);
+      ->with('agendaTopics', $agendaTopics)
+      ->with('users', $users);
   }
 }

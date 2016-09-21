@@ -4,6 +4,8 @@
 
 @section('content')
   <div class="row">
+
+    @if (Auth::user()->confirmed || Auth::user()->admin)
     <div class="col-lg-4" id="column-blog">
       <h3>
         Your Blog<br/>
@@ -109,7 +111,7 @@
               </td>
 
               <td>
-              <a role="button" href="{{ url('manage/agenda_topic/' . $agendaTopic->id . '/edit') }}" class="btn btn-info" id="edit_agenda_topic_{{ $agendaTopic->id }}">Edit</a>
+                <a role="button" href="{{ url('manage/agenda_topic/' . $agendaTopic->id . '/edit') }}" class="btn btn-info" id="edit_agenda_topic_{{ $agendaTopic->id }}">Edit</a>
               </td>
             </tr>
 
@@ -119,17 +121,38 @@
       </div><!-- END PANEL -->
 
     </div><!-- END COLUMN-MEETINGS -->
+    @endif
 
     @if (Auth::user()->admin)
-
     <div class="col-lg-4" id="column-administration">
       <h3>
         Administration<br/>
         <small>Manage membership and site content.</small>
       </h3>
-      <p><em>Coming Soon</em></p>
-    </div><!-- END COLUMN-ADMINISTRATION -->
 
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Users
+        </div>
+        <table class="table">
+          @foreach ($users as $user)
+            <tr>
+              <td>
+                @if ($user->admin)
+                  <span class="label label-primary">Admin</span>
+                @elseif ($user->confirmed)
+                  <span class="label label-success">Member</span>
+                @endif
+                {{ $user->name }}
+              </td>
+              <td>
+                <a href="{{ url('manage/user/' . $user->id . '/edit') }}" id="edit_user_{{ $user->id }}" class="btn btn-info" role="button">Edit</a>
+              </td>
+            </tr>
+          @endforeach
+        </table>
+      </div>
+    </div><!-- END COLUMN-ADMINISTRATION -->
     @endif
 
   </div>

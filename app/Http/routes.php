@@ -63,4 +63,5 @@ Route::group([
       'store', 'update', 'destroy', 'edit'
     ],
   ]);
+  Route::resource('/user', 'UserController');
 });

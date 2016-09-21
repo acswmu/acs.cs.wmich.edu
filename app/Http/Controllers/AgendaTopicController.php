@@ -24,12 +24,16 @@ class AgendaTopicController extends Controller
         'topic' => 'required|max:255',
       ]);
 
-      AgendaTopic::create([
-        'topic' => $request->input('topic'),
-        'description' => $request->input('description'),
-        'important' => $request->input('important', false),
-        'user_id' => $request->user()->id,
-      ]);
+      /* Only allow confirmed members to submit topics. */
+      if ($request->user()->confirmed || $request->user()->admin) {
+        AgendaTopic::create([
+          'topic' => $request->input('topic'),
+          'description' => $request->input('description'),
+          'important' => $request->input('important', false),
+          'user_id' => $request->user()->id,
+        ]);
+      }
+
       return redirect('/manage');
     }
 
