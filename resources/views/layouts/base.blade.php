@@ -52,7 +52,7 @@
 
       <div class="footer">
         <hr/>
-        <p><small>Designed in 2016 by the Academic Computing Society <span class="glyphicon glyphicon-star"></span> <a href="https://github.com/acswmu/acs.cs.wmich.edu" alt="Check out this website's source">Under the Hood</a></small></p>
+        <p><small>Designed in 2016 by the Academic Computing Society <span class="glyphicon glyphicon-star"></span> <a href="https://github.com/acswmu/acs.cs.wmich.edu" title="Check out this website's source">Under the Hood</a></small></p>
       </div>
     </div>
 
