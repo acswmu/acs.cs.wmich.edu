@@ -45,6 +45,7 @@
     <h3>Contact Us<br/><small>Join us on Slack or Facebook</small></h3>
     <p><a href="https://wmu-acs.slack.com" title="ACS Slack"><img src="{{ asset('images/Slack App Icon.png') }}" alt="Slack App Icon" height="24px"/> wmu-acs</a></p>
     <p><a href="https://www.facebook.com/AcademicComputingSociety/" title="ACS Facebook Page"><img src="{{ asset('images/FB-f-Logo__blue_50.png') }}" height="24px"/> /AcademicComputingSociety</a></p>
+    <p><a href="https://github.com/acswmu" title="ACS Github Organization"><img src="{{ asset('images/GitHub-Mark-32px.png') }}" height="24px"/> /acswmu</a></p>
   </div>
   <div class="text-center col-sm-12 col-md-6">
     <h3>Find Us<br/>
@@ -54,6 +55,7 @@
     College of Engineering and Applied Sciences<br/>
     Western Michigan University
     </p>
+    <p><a href="http://wmich.collegiatelink.com/organization/ACS">Join our RSO page!</a></p>
   </div>
 </div>
 @endsection
