@@ -55,7 +55,7 @@
     College of Engineering and Applied Sciences<br/>
     Western Michigan University
     </p>
-    <p><a href="http://wmich.collegiatelink.com/organization/ACS">Join our RSO page!</a></p>
+    <p><a href="http://wmich.collegiatelink.net/organization/ACS">Join our RSO page!</a></p>
   </div>
 </div>
 @endsection
