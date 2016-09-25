@@ -15,6 +15,9 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
+      <img class="center-block" src="{{ asset('images/1.jpg') }}" alt="Image of ACS">
+    </div>
+    <div class="item">
       <img class="center-block" src="{{ asset('images/2.jpg') }}" alt="Image of ACS">
     </div>
     <div class="item">
