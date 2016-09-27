@@ -44,8 +44,8 @@ class UserTest extends TestCase
         ->visit('manage/user/' . $user->id . '/edit')
         ->check('confirmed')
         ->check('admin')
-        ->type('Test Name', 'name')
-        ->type('Test Bio', 'bio')
+        ->type($testName, 'name')
+        ->type($testBio, 'bio')
         ->press('Update')
         ->seePageIs('manage/');
 

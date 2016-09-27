@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-group">
-        <label for="bio">Name</label>
+        <label for="bio">Bio</label>
         <textarea type="text" name="bio" id="bio" class="form-control">{{ $user->bio }}</textarea>
       </div>
 

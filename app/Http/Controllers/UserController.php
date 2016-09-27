@@ -80,7 +80,7 @@ class UserController extends Controller
         $user->admin = $request->input('admin', false) == 'on';
       }
 
-      if ($request->user()->id == $user->id) {
+      if ($request->user()->id == $user->id || $request->user()->admin) {
         $user->name = $request->input('name', $user->name);
         $user->bio = $request->input('bio', $user->bio);
       }
