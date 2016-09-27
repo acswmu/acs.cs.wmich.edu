@@ -6,15 +6,15 @@
   <div class="row">
 
     @if (Auth::user()->confirmed || Auth::user()->admin)
-    <div class="col-lg-4" id="column-blog">
+    <div class="@if(Auth::user()->admin) col-lg-4 @else col-lg-6 @endif" id="column-profile">
       <h3>
-        Your Blog<br/>
+        Your Profile<br/>
         <small>Showcase your talents on the ACS site.</small>
       </h3>
       <p><em>Coming Soon</em></p>
-    </div><!-- END COLUMN-BLOG -->
+    </div><!-- END COLUMN-PROFILE -->
 
-    <div class="col-lg-4" id="column-meetings">
+  <div class="@if(Auth::user()->admin) col-lg-4 @else col-lg-6 @endif" id="column-meetings">
       <h3>
         Meetings<br/>
         <small>Manage agenda topics here.</small>
