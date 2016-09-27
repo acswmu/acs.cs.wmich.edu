@@ -14,7 +14,7 @@
       <p><em>Coming Soon</em></p>
     </div><!-- END COLUMN-PROFILE -->
 
-  <div class="@if(Auth::user()->admin) col-lg-4 @else col-lg-6 @endif" id="column-meetings">
+    <div class="@if(Auth::user()->admin) col-lg-4 @else col-lg-6 @endif" id="column-meetings">
       <h3>
         Meetings<br/>
         <small>Manage agenda topics here.</small>
