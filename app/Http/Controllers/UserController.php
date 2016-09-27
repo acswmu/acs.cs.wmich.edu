@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+      return redirect('manage/');
     }
 
     /**
@@ -75,8 +75,11 @@ class UserController extends Controller
     {
       $user = User::findOrFail($id);
 
-      if ($request->user()->admin) {
+      if ($request->user()->admin || $request->user()->id == $user->id) {
         $user->confirmed = $request->input('confirmed', false) == 'on';
+        $user->admin = $request->input('admin', false) == 'on';
+        $user->name = $request->input('name', $user->name);
+        $user->bio = $request->input('bio', $user->bio);
       }
 
       $user->save();
@@ -90,8 +93,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+      $user = User::findOrFail($id);
+
+      if ($request->user()->admin || $request->user()->id == $user->id) {
+        $user->delete();
+      }
+
+      return redirect('manage/');
     }
 }

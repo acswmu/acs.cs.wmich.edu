@@ -31,4 +31,28 @@ class UserTest extends TestCase
         ->seePageIs('manage/')
         ->see('Member</span>');
     }
+
+    public function testUpdateUser()
+    {
+      $adminUser = factory(App\User::class, 'admin')->create();
+      $user = factory(App\User::class)->create();
+
+      $testName = 'Test Name';
+      $testBio = 'Test Bio';
+
+      $this->actingAs($adminUser)
+        ->visit('manage/user/' . $user->id . '/edit')
+        ->check('confirmed')
+        ->check('admin')
+        ->type('Test Name', 'name')
+        ->type('Test Bio', 'bio')
+        ->press('Update')
+        ->seePageIs('manage/');
+
+      $updatedUser = App\User::find($user->id);
+      $this->assertEquals($updatedUser->confirmed, 1);
+      $this->assertEquals($updatedUser->admin, 1);
+      $this->assertEquals($updatedUser->name, $testName);
+      $this->assertEquals($updatedUser->bio, $testBio);
+    }
 }

@@ -29,7 +29,7 @@ class AgendaTopicTest extends TestCase
      * that they don't own. */
     public function testAgendaTopicVisibility()
     {
-      $user = factory(App\User::class)->create();
+      $user = factory(App\User::class, 'confirmed')->create();
       $agendaTopic = factory(App\AgendaTopic::class)->create();
       $agendaTopicOwned = factory(App\AgendaTopic::class)->create();
       $agendaTopicOwned->user_id = $user->id;
@@ -43,7 +43,7 @@ class AgendaTopicTest extends TestCase
 
     public function testDeleteAgendaTopic() 
     {
-      $user = factory(App\User::class)->create();
+      $user = factory(App\User::class, 'confirmed')->create();
       $agendaTopic = factory(App\AgendaTopic::class)->create();
       $agendaTopic->user_id = $user->id;
       $agendaTopic->save();
@@ -57,7 +57,7 @@ class AgendaTopicTest extends TestCase
 
     public function testEditAgendaTopic()
     {
-      $user = factory(App\User::class)->create();
+      $user = factory(App\User::class, 'confirmed')->create();
       $agendaTopic = factory(App\AgendaTopic::class)->create();
       $agendaTopic->user_id = $user->id;
       $agendaTopic->save();
@@ -70,7 +70,7 @@ class AgendaTopicTest extends TestCase
 
     public function testUpdateAgendaTopic()
     {
-      $user = factory(App\User::class)->create();
+      $user = factory(App\User::class, 'confirmed')->create();
       $agendaTopic = factory(App\AgendaTopic::class)->create();
       $agendaTopic->user_id = $user->id;
       $agendaTopic->save();

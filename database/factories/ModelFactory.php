@@ -18,6 +18,19 @@ $factory->define(App\User::class, function(Faker\Generator $faker) {
     'bio' => $faker->paragraph,
     'website' => $faker->url,
     'admin' => false,
+    'confirmed' => false,
+    'password' => bcrypt('password'),
+    'remember_token' => str_random(10),
+  ];
+});
+
+$factory->defineAs(App\User::class, 'confirmed', function(Faker\Generator $faker) {
+  return [
+    'name' => $faker->name,
+    'email' => $faker->safeEmail,
+    'bio' => $faker->paragraph,
+    'website' => $faker->url,
+    'admin' => false,
     'confirmed' => true,
     'password' => bcrypt('password'),
     'remember_token' => str_random(10),
