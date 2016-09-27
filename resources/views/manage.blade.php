@@ -11,7 +11,7 @@
         Your Profile<br/>
         <small>Showcase your talents on the ACS site.</small>
       </h3>
-      <p><em>Coming Soon</em></p>
+      <p><a class="btn btn-default" id="edit_user" href="{{ url('manage/user/' . Auth::user()->id . '/edit') }}">Edit Your Profile</a></p>
     </div><!-- END COLUMN-PROFILE -->
 
     <div class="@if(Auth::user()->admin) col-lg-4 @else col-lg-6 @endif" id="column-meetings">

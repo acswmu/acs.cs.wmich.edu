@@ -75,9 +75,12 @@ class UserController extends Controller
     {
       $user = User::findOrFail($id);
 
-      if ($request->user()->admin || $request->user()->id == $user->id) {
+      if ($request->user()->admin) {
         $user->confirmed = $request->input('confirmed', false) == 'on';
         $user->admin = $request->input('admin', false) == 'on';
+      }
+
+      if ($request->user()->id == $user->id) {
         $user->name = $request->input('name', $user->name);
         $user->bio = $request->input('bio', $user->bio);
       }
