@@ -54,6 +54,7 @@
     <p><a href="https://wmu-acs.slack.com" title="ACS Slack"><img src="{{ asset('images/Slack App Icon.png') }}" alt="Slack App Icon" height="24px"/> wmu-acs</a></p>
     <p><a href="https://www.facebook.com/AcademicComputingSociety/" title="ACS Facebook Page"><img src="{{ asset('images/FB-f-Logo__blue_50.png') }}" height="24px"/> /AcademicComputingSociety</a></p>
     <p><a href="https://github.com/acswmu" title="ACS Github Organization"><img src="{{ asset('images/GitHub-Mark-32px.png') }}" height="24px"/> /acswmu</a></p>
+    <p><a href="mailto:acswmu@gmail.com"><img src="{{ asset('images/gmail-logo.png') }}" alt="Gmail Icon" width="24px"/> acswmu@gmail.com</a></p>
   </div>
   <div class="text-center col-sm-12 col-md-6">
     <h3>Find Us<br/>
