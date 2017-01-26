@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-sm-12 col-md-8">
     <h3>This Week's Agenda<br/>
-      <small>Wednesdays at 5 PM in B-115</small>
+      <small>Wednesdays at 5:30 PM in B-115</small>
     </h3>
     <!-- In the future this will pull from somewhere that is easier to edit. -->
     <!-- For now, edit it on the page directly. -->
